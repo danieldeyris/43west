@@ -1,0 +1,35 @@
+/* ===== Title document invoice/asset ===== */
+
+/* ===== Table head ===== */
+
+/* ===== Table body ===== */
+
+/* ===== Taxes and Total ===== */
+.divAmountTaxes{
+    margin-top: 40px;
+}
+.divAmountTaxes > .table-condensed{
+    border: 2px solid rgba(66,62,61,1);
+}
+.divAmountTaxes > .table-condensed > thead > tr > th{
+    background-color: rgba(66,62,61,1);
+    border: none !important;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.divAmountTaxes > .table-condensed > tbody > tr > td{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* ===== Invoice date / Payment Term / Total / Due date ===== */
+.divPaymentTermInvoice > .table-condensed{
+    border: 2px solid rgba(140,140,140,1);
+}
+.divPaymentTermInvoice .table td{
+    text-align: center;
+}
+.divPaymentTermInvoice tr:first-child td{
+    border-bottom: 2px solid rgba(140,140,140,1) !important;
+}

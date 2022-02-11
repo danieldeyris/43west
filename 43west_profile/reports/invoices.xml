@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2018 Syleam
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <!-- 43west_profile_minimal_laout_?? = import css for PDF format -->
+    <template id="43west_profile_minimal_layout_invoices" inherit_id="web.minimal_layout">
+        <xpath expr="//head" position="inside">
+            <link href="/43west_profile/static/src/css/report_invoices_assets.css" rel="stylesheet"/>
+        </xpath>
+    </template>
+
+    <!-- 43west_profile_layout_?? = import css for HTML format -->
+    <template id="43west_profile_layout_invoices" inherit_id="web.report_layout">
+        <xpath expr="//head" position="inside">
+            <link href="/43west_profile/static/src/css/report_invoices_assets.css" rel="stylesheet"/>
+        </xpath>
+    </template>
+
+<!--    <template id="43west_profile_invoice_document" inherit_id="account.report_invoice_document">-->
+<!--        &lt;!&ndash; Customer &ndash;&gt;-->
+<!--        <xpath expr="//div[@class='row'][1]" position="attributes">-->
+<!--            <attribute name="class">row divFirstRow</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//address[@t-field='o.partner_id']/.." position="attributes">-->
+<!--            <attribute name="class">col-xs-5 pull-right</attribute>-->
+<!--        </xpath>-->
+
+<!--        &lt;!&ndash; Title &ndash;&gt;-->
+<!--        <xpath expr="//h2" position="attributes">-->
+<!--            <attribute name="class">col-xs-12</attribute>-->
+<!--        </xpath>-->
+
+<!--        &lt;!&ndash; Information &ndash;&gt;-->
+<!--        <xpath expr="//p[@t-field='o.date_invoice']/../.." position="attributes">-->
+<!--            <attribute name="class">row divInformations</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//p[@t-field='o.date_invoice']/.." position="attributes">-->
+<!--            <attribute name="class">col-xs-12</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//p[@t-field='o.origin']/.." position="attributes">-->
+<!--            <attribute name="class">col-xs-12</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//p[@t-field='o.reference']/.." position="attributes">-->
+<!--            <attribute name="class">col-xs-12</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//p[@t-field='o.name']/.." position="replace" />-->
+<!--        <xpath expr="//p[@t-field='o.date_due']/.." position="replace" />-->
+
+<!--        &lt;!&ndash; Table head &ndash;&gt;-->
+<!--        <xpath expr="//th[@t-if='display_discount']" position="replace" />-->
+<!--        <xpath expr="//th[text()='Description']/../../.." position="attributes">-->
+<!--            <attribute name="class">table table-condensed tblProduct</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//table[@class='table table-condensed tblProduct']/thead/tr/th[text()='Taxes']" position="replace" />-->
+<!--        <xpath expr="//table[@class='table table-condensed tblProduct']/thead/tr/th[4]" position="after">-->
+<!--            <th class="col-xs-1 text-right">Taxes</th>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//table[@class='table table-condensed tblProduct']/thead/tr/th[1]" position="attributes">-->
+<!--            <attribute name="class">col-xs-4 text-center</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//table[@class='table table-condensed tblProduct']/thead/tr/th[2]" position="attributes">-->
+<!--            <attribute name="class">hidden col-xs-2 text-right</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//table[@class='table table-condensed tblProduct']/thead/tr/th[3]" position="attributes">-->
+<!--            <attribute name="class">col-xs-2 text-right</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//table[@class='table table-condensed tblProduct']/thead/tr/th[4]" position="attributes">-->
+<!--            <attribute name="class">col-xs-2 text-right</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//table[@class='table table-condensed tblProduct']/thead/tr/th[1]" position="before">-->
+<!--            <th class="col-xs-1">Code Article</th>-->
+<!--        </xpath>-->
+
+<!--        &lt;!&ndash; Table body &ndash;&gt;-->
+<!--        <xpath expr="//span[@t-field='l.price_unit']" position="after">-->
+<!--            <t t-if="l.discount != 0">-->
+<!--                <p class="pRemise">Rem. <span t-field="l.discount"/> %</p>-->
+<!--            </t>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//tbody[@class='invoice_tbody']/tr/td[@t-if='display_discount']" position="replace" />-->
+<!--        <xpath expr="//tbody[@class='invoice_tbody']/tr/td[5]" position="replace" />-->
+<!--        <xpath expr="//tbody[@class='invoice_tbody']/tr/td/span[@t-field='l.price_subtotal']/.." position="before">-->
+<!--            <td class="text-right">-->
+<!--                <span t-esc="', '.join(map(lambda x: str(x.amount) + ' %', l.invoice_line_tax_ids))"/>-->
+<!--            </td>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//tbody[@class='invoice_tbody']/tr/td[1]" position="before">-->
+<!--            <td><span t-field="l.product_id.default_code" /></td>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//tbody[@class='invoice_tbody']/tr/td/span[@t-field='l.name']" position="replace">-->
+<!--            <div>-->
+<!--                <t t-set="product_name" t-value="l.name.split('\n')[0]" />-->
+<!--                <span t-esc="product_name.split(']', 1)[1]" />-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <t t-foreach="l.name.split('\n')[1:]" t-as="line">-->
+<!--                    <span class="spanDescIndentation" t-esc="line"/><br/>-->
+<!--                </t>-->
+<!--            </div>-->
+<!--        </xpath>-->
+
+<!--        <xpath expr="//table[@class='table table-condensed tblProduct']" position="after">-->
+<!--            <hr />-->
+<!--        </xpath>-->
+
+<!--        &lt;!&ndash; Taxes and Total &ndash;&gt;-->
+<!--        <xpath expr="//div[@class='row'][1]/div" position="attributes">-->
+<!--            <attribute name="class">col-xs-5 pull-right divTotal mt40</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//div[@class='col-xs-5 pull-right divTotal mt40']" position="before">-->
+<!--            <div class="col-xs-7 divAmountTaxes" t-if="o.tax_line_ids">-->
+<!--                <table class="table table-condensed">-->
+<!--                    <thead>-->
+<!--                        <tr>-->
+<!--                            <th class="col-xs-6">Tax</th>-->
+<!--                            <th class="col-xs-3 text-center">Base</th>-->
+<!--                            <th class="col-xs-3 text-right">Amount</th>-->
+<!--                        </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                        <tr t-foreach="o.tax_line_ids" t-as="t">-->
+<!--                            <td><span t-field="t.name" /></td>-->
+<!--                            <td class="text-center">-->
+<!--                                <span t-field="o.amount_untaxed" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/>-->
+<!--                            </td>-->
+<!--                            <td class="text-right">-->
+<!--                                <span t-field="t.amount" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//div[@class='row'][2]" position="replace" />-->
+
+<!--        &lt;!&ndash; Comment / Bank &ndash;&gt;-->
+<!--        <xpath expr="//p[@t-if='o.comment']" position="replace">-->
+<!--            <div class="row">-->
+<!--                <div class="col-xs-12 divCommentBank">-->
+<!--                    <table class="table table-condensed">-->
+<!--                        <tr>-->
+<!--                            <td class="col-xs-7">-->
+<!--                                <span t-field="o.comment" />-->
+<!--                            </td>-->
+<!--                            <td t-if="o.company_id.partner_id.bank_ids" class="col-xs-5">-->
+<!--                                <p><strong>IBAN : <span t-field="o.company_id.partner_id.bank_ids[0].acc_number"/></strong></p>-->
+<!--                                <p><strong>BIC/SWIFT : <span t-field="o.company_id.partner_id.bank_ids[0].bank_bic"/></strong></p>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </xpath>-->
+
+<!--        &lt;!&ndash; Invoice date / Payment Term / Total / Due date &ndash;&gt;-->
+<!--        <xpath expr="//p[@t-if='o.payment_term_id']" position="replace">-->
+<!--            <div class="row">-->
+<!--                <div class="col-xs-12 divPaymentTermInvoice">-->
+<!--                    <table class="table table-condensed">-->
+<!--                        <tr>-->
+<!--                            <td class="col-xs-3"><strong>Invoice Date</strong></td>-->
+<!--                            <td class="col-xs-3"><strong>Payment Term</strong></td>-->
+<!--                            <td class="col-xs-3"><strong>Total</strong></td>-->
+<!--                            <td class="col-xs-3"><strong>Due Date</strong></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td><span t-field="o.date_invoice"/></td>-->
+<!--                            <td><span t-field="o.payment_term_id"/></td>-->
+<!--                            <td><span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/></td>-->
+<!--                            <td><span t-field="o.date_due"/></td>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </xpath>-->
+
+<!--        &lt;!&ndash; Fiscal Position &ndash;&gt;-->
+<!--        <xpath expr="//p[@t-if='o.fiscal_position_id.note']" position="replace" />-->
+<!--    </template>-->
+</odoo>

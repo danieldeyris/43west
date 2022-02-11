@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2016 Syleam
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record id="printing_label_product" model="printing.label.zpl2">
+        <field name="name">Product</field>
+        <field name="description">Generic Product Label</field>
+        <field name="model_id" ref="product.model_product_product"/>
+        <field name="origin_x">10</field>
+        <field name="origin_y">30</field>
+    </record>
+    <record id="printing_label_product_component_product_name" model="printing.label.zpl2.component">
+        <field name="label_id" ref="printing_label_product"/>
+        <field name="name">Product Name</field>
+        <field name="sequence">0</field>
+        <field name="origin_x">0</field>
+        <field name="origin_y">0</field>
+        <field name="component_type">text</field>
+        <field name="data">object.name</field>
+        <field name="width">25</field>
+        <field name="height">50</field>
+    </record>
+    <record id="printing_label_product_component_product_code" model="printing.label.zpl2.component">
+        <field name="label_id" ref="printing_label_product"/>
+        <field name="name">Product Code</field>
+        <field name="sequence">10</field>
+        <field name="origin_x">0</field>
+        <field name="origin_y">55</field>
+        <field name="component_type">text</field>
+        <field name="data">object.default_code</field>
+        <field name="width">40</field>
+        <field name="height">50</field>
+    </record>
+    <record id="printing_label_product_component_product_attributes" model="printing.label.zpl2.component">
+        <field name="label_id" ref="printing_label_product"/>
+        <field name="name">Product Attributes</field>
+        <field name="sequence">15</field>
+        <field name="origin_x">0</field>
+        <field name="origin_y">110</field>
+        <field name="component_type">text</field>
+        <field name="data">', '.join(object.attribute_value_ids.mapped('name'))</field>
+        <field name="width">40</field>
+        <field name="height">50</field>
+    </record>
+    <record id="printing_label_product_component_product_barcode" model="printing.label.zpl2.component">
+        <field name="label_id" ref="printing_label_product"/>
+        <field name="name">Product Barcode</field>
+        <field name="sequence">20</field>
+        <field name="origin_x">0</field>
+        <field name="origin_y">175</field>
+        <field name="component_type">code_128</field>
+        <field name="data">'>8' + (lot and ('10' + lot.name) or ('01' + (object.barcode or '')))</field>
+        <field name="width">400</field>
+        <field name="height">75</field>
+        <field name="interpretation_line" eval="True"/>
+    </record>
+    <record id="printing_label_product_component_company_name" model="printing.label.zpl2.component">
+        <field name="label_id" ref="printing_label_product"/>
+        <field name="name">Company Name</field>
+        <field name="sequence">100</field>
+        <field name="origin_x">340</field>
+        <field name="origin_y">110</field>
+        <field name="component_type">text</field>
+        <field name="data">'43 WEST'</field>
+        <field name="width">30</field>
+        <field name="height">50</field>
+    </record>
+    <record id="printing_label_product_component_company_website" model="printing.label.zpl2.component">
+        <field name="label_id" ref="printing_label_product"/>
+        <field name="name">Company Website</field>
+        <field name="sequence">110</field>
+        <field name="origin_x">275</field>
+        <field name="origin_y">275</field>
+        <field name="component_type">text</field>
+        <field name="data">'www.43-west.com'</field>
+        <field name="width">20</field>
+        <field name="height">30</field>
+    </record>
+
+    <record id="printing_label_location" model="printing.label.zpl2">
+        <field name="name">Location</field>
+        <field name="description">Generic Location Label</field>
+        <field name="model_id" ref="stock.model_stock_location"/>
+        <field name="origin_x">10</field>
+        <field name="origin_y">30</field>
+    </record>
+    <record id="printing_label_location_component_location_name" model="printing.label.zpl2.component">
+        <field name="label_id" ref="printing_label_location"/>
+        <field name="name">Location Name</field>
+        <field name="sequence">0</field>
+        <field name="origin_x">75</field>
+        <field name="origin_y">0</field>
+        <field name="component_type">text</field>
+        <field name="data">object.name</field>
+        <field name="width">150</field>
+        <field name="height">150</field>
+    </record>
+    <record id="printing_label_location_component_location_barcode" model="printing.label.zpl2.component">
+        <field name="label_id" ref="printing_label_location"/>
+        <field name="name">Location Barcode</field>
+        <field name="sequence">10</field>
+        <field name="origin_x">125</field>
+        <field name="origin_y">150</field>
+        <field name="component_type">code_128</field>
+        <field name="data">object.name</field>
+        <field name="width">400</field>
+        <field name="height">150</field>
+        <field name="interpretation_line" eval="False"/>
+    </record>
+</odoo>

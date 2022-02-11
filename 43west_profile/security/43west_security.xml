@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2017 Syleam
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record id="base.group_user" model="res.groups">
+        <field name="implied_ids" eval="[
+            (4, ref('base_report_to_printer.printing_group_user')),
+        ]"/>
+    </record>
+</odoo>

@@ -1,0 +1,43 @@
+/* ===== Customer ===== */
+
+/* ===== Title document ===== */
+
+/* ===== Informations ===== */
+.divInfosRight{
+    text-align: right;
+}
+.divReference{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.divDateOrder{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.divSalePerson{
+    padding-left: 0px;
+}
+
+/* ===== Table head ===== */
+
+/* ===== Table body ===== */
+
+/* ===== Total ===== */
+.divPaymentTerm{
+    margin-top: 40px;
+}
+.divPaymentTerm p{
+    border: 2px solid rgba(84,176,228,1);
+    margin: 0px;
+    padding: 2px;
+    text-align: center;
+}
+.pPaymentTermTop{
+    background: rgba(84,176,228,1);
+    border-bottom: none !important;
+    color: white;
+    font-weight: bold;
+}
+.pPaymentTermBottom{
+    border-top: none !important;
+}
