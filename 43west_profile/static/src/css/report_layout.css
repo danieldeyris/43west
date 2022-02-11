@@ -1,0 +1,151 @@
+/* =================================== */
+/* ========== COMMON REPORT ========== */
+/* =================================== */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+body{
+    font-family: 'Ubuntu', sans-serif !important;
+    font-size: 10pt;
+}
+.page{
+    /*background-image: url("/syleam_reports/static/src/images/syleamlogo_notext.jpg");*/
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+table{
+    border-collapse: separate;
+}
+hr{
+    border: none;
+    border-top: 2px solid rgba(66,62,61,0.5);
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+}
+address{
+    margin-bottom: 0px !important;
+}
+.mt40{
+    margin-top: 40px;
+}
+
+/* ===== Customer ===== */
+.divFirstRow{
+    margin-right: 0px;
+}
+span[itemprop="name"]{
+    font-size: 13pt;
+    font-weight: bold;
+}
+div[itemprop="address"]{
+    font-size: 11pt;
+    padding-left: 15px;
+}
+
+/* ===== Title document ===== */
+h2{
+    /*border: 2px solid rgba(84,176,228,1) !important;*/
+    border: 2px solid rgba(66,62,61,1) !important;
+    float: none !important;
+    font-size: 18pt;
+    font-weight: bold;
+    height: 50px;
+    margin-bottom: 25px;
+    padding-top: 10px !important;
+    text-align: center;
+}
+
+/* ===== Informations ===== */
+.divInformations strong, .divInformations p{
+    padding: 2px;
+}
+.divInformations p{
+    display: inline;
+}
+
+/* ===== Table Product ===== */
+/*
+ * If no watermark, disable comment
+ */
+.tblProduct tr:nth-child(2n){
+    background-color: rgba(235,235,235,0.8);
+}
+/**/
+.tblProduct{
+    border-collapse: collapse !important;
+    margin-top: 30px;
+}
+
+/* ===== Table Head ===== */
+thead tr:first-child th:last-child{
+    padding-right: 8px;
+}
+.tblProduct > thead > tr > th{
+    border-bottom: none !important;
+    border-top: none !important;
+}
+.tblProduct th{
+    background: rgba(66,62,61,1);
+    /*border: 2px solid rgba(66,62,61,1) !important;*/
+    color: white;
+}
+
+/* ===== table body ===== */
+.tblProduct tr:nth-child(2n){
+    border-bottom: 1px dashed rgba(240,240,240,1) !important;
+    border-top: 1px dashed rgba(240,240,240,1) !important;
+}
+.tblProduct td{
+    padding-bottom: 12px !important;
+    padding-top: 12px !important;
+}
+.table > tbody > tr > td{
+    border-top: none !important;
+}
+.spanDescIndentation{
+    display: inline-block;
+    font-style: italic;
+    font-size: 8pt;
+    margin-left: 30px;
+}
+.pRemise{
+    font-style: italic;
+    font-size: 9pt;
+    min-width: 82px;
+}
+
+/* ===== Note ===== */
+.divNote{
+    padding: 10px;
+}
+
+/* ===== Total ===== */
+.divTotal > .table-condensed{
+    border: 2px solid rgba(140,140,140,1);
+}
+.divTotal tr td:first-child{
+    text-align: right;
+}
+.divTotal tr td:last-child{
+    padding-right: 10px;
+}
+.divTotal tr:nth-child(2) td:first-child{
+    font-weight: bold;
+}
+.divTotal tr:last-child td:first-child, .divTotal tr:last-child td:last-child{
+    border-top: 2px solid rgba(140,140,140,1) !important;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+/* ===== Table Comment Bank ===== */
+.divCommentBank .table{
+    border: 2px solid rgba(140,140,140,1);
+}
+.divCommentBank .table td{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*.divCommentBank .table td:first-child{*/
+    /*border-right: 2px solid rgba(140,140,140,1) !important;*/
+/*}*/

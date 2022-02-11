@@ -1,0 +1,47 @@
+.header{
+    background: none;
+    padding-top: 20px;
+}
+.divCompanyPartner{
+    background: none;
+    color: rgba(152,152,152,0.9);
+    margin-top: 17px;
+}
+.divCompanyPartner img{
+    height: 60px;
+    margin-bottom: 10px;
+}
+.spanPartnerId{
+    color: rgba(66,62,61,1);
+    font-size: 18pt;
+    text-transform: uppercase;
+}
+.divAddressCompanyPartner{
+    margin-left: 15px;
+}
+.iAddressCompanyPartner{
+    float: left;
+}
+.divAddressCompanyPartnerIndent{
+    display: inline-block;
+    margin-left: 14px;
+}
+.spanPhoneCompanyPartner{
+    margin-left: 10px;
+}
+.spanFaxCompanyPartner{
+    margin-left: 6px;
+}
+.spanEmailCompanyPartner{
+    margin-left: 10px;
+}
+.spanWebsiteCompanyPartner{
+    margin-left: 10px;
+}
+.divCompanyLogo{
+    background: none;
+    text-align: right;
+}
+.divCompanyLogo img{
+    max-height: 135px;
+}

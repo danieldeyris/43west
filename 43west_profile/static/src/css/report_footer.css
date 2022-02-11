@@ -1,0 +1,14 @@
+.footer{
+    border-top: 2px solid rgba(66,62,61,0.8);
+    font-size: 9pt;
+    margin-top: 5px;
+}
+.divFooter{
+    color: rgba(152,152,152,1);
+}
+.divCompanyWebsite{
+    margin-top: 8px;
+}
+.ulPagination{
+    text-align: right;
+}

@@ -1,0 +1,537 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* 43west_profile
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-27 15:18+0000\n"
+"PO-Revision-Date: 2018-02-27 15:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: 43west_profile
+#: model:mail.template,body_html:43west_profile.email_template_edi_sale
+msgid "\n"
+"<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Hello,</p>\n"
+"    \n"
+"    <p>Here is your ${object.state in ('draft', 'sent') and 'quotation' or 'order confirmation'} from ${object.company_id.name}: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br />\n"
+"       &nbsp;&nbsp;Order number: <strong>${object.name}</strong><br />\n"
+"       &nbsp;&nbsp;Order total: <strong>${object.amount_total} ${object.pricelist_id.currency_id.name}</strong><br />\n"
+"       &nbsp;&nbsp;Order date:  ${format_tz(object.date_order, tz=user.tz, context={'lang':object.partner_id.lang})} <br />\n"
+"       % if object.origin:\n"
+"       &nbsp;&nbsp;Order reference: ${object.origin}<br />\n"
+"       % endif\n"
+"       % if object.client_order_ref:\n"
+"       &nbsp;&nbsp;Your reference: ${object.client_order_ref}<br />\n"
+"       % endif\n"
+"       % if object.user_id:\n"
+"       &nbsp;&nbsp;Your contact: <a href=\"mailto:${object.user_id.email or ''}?subject=Order%20${object.name}\">${object.user_id.name}</a>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br/>\n"
+"    <p>If you have any question, do not hesitate to contact us.</p>\n"
+"    <p>Thank you for choosing ${object.company_id.name or 'us'}!</p>\n"
+"    <br/>\n"
+"    <br/>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"            ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
+"        </span>\n"
+"        % if object.company_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Phone:&nbsp; ${object.company_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.website:\n"
+"            <div>\n"
+"                Web :&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+"            "
+msgstr "<div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"\n"
+"    <p>Bonjour,</p>\n"
+"    \n"
+"    <p>Voici votre ${object.state in ('draft', 'sent') and 'devis' or 'confirmation de commande'} de ${object.company_id.name}: </p>\n"
+"\n"
+"    <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"       &nbsp;&nbsp;<strong>REFERENCES</strong><br />\n"
+"       &nbsp;&nbsp;Numéro de commande&nbsp;: <strong>${object.name}</strong><br />\n"
+"       &nbsp;&nbsp;Total de la commande&nbsp;: <strong>${object.amount_total} ${object.pricelist_id.currency_id.name}</strong><br />\n"
+"       &nbsp;&nbsp;Date de la commande&nbsp;: ${object.date_order}<br />\n"
+"       % if object.origin:\n"
+"       &nbsp;&nbsp;Référence de la commande&nbsp;: ${object.origin}<br />\n"
+"       % endif\n"
+"       % if object.client_order_ref:\n"
+"       &nbsp;&nbsp;Votre référence&nbsp;: ${object.client_order_ref}<br />\n"
+"       % endif\n"
+"       % if object.user_id:\n"
+"       &nbsp;&nbsp;Votre contact&nbsp;: <a href=\"mailto:${object.user_id.email or ''}?subject=Commande%20${object.name}\">${object.user_id.name}</a>\n"
+"       % endif\n"
+"    </p>\n"
+"\n"
+"    <br/>\n"
+"    <p>Si vous avez des questions, n'hésitez pas à nous contacter.</p>\n"
+"    <p>Merci d'avoir choisi ${object.company_id.name or 'notre société'}!</p>\n"
+"    <br/>\n"
+"    <br/>\n"
+"    <div style=\"width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;\">\n"
+"        <h3 style=\"margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;\">\n"
+"            <strong style=\"text-transform:uppercase;\">${object.company_id.name}</strong></h3>\n"
+"    </div>\n"
+"    <div style=\"width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;\">\n"
+"        <span style=\"color: #222; margin-bottom: 5px; display: block; \">\n"
+"            ${object.company_id.partner_id.sudo().with_context(show_address=True, html_format=True).name_get()[0][1] | safe}\n"
+"        </span>\n"
+"        % if object.company_id.phone:\n"
+"            <div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; \">\n"
+"                Tél&nbsp;:&nbsp; ${object.company_id.phone}\n"
+"            </div>\n"
+"        % endif\n"
+"        % if object.company_id.website:\n"
+"            <div>\n"
+"                Web&nbsp;:&nbsp;<a href=\"${object.company_id.website}\">${object.company_id.website}</a>\n"
+"            </div>\n"
+"        %endif\n"
+"        <p></p>\n"
+"    </div>\n"
+"</div>\n"
+""
+
+#. module: 43west_profile
+#: model:mail.template,report_name:43west_profile.email_template_edi_sale
+msgid "${(object.name or '').replace('/','_')}_${object.state == 'draft' and 'draft' or ''}"
+msgstr "${(object.name or '').replace('/','_')}_${object.state == 'draft' and 'devis' or ''}"
+
+#. module: 43west_profile
+#: model:mail.template,subject:43west_profile.email_template_edi_sale
+msgid "${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })"
+msgstr "${object.company_id.name|safe} ${object.state in ('draft', 'sent') and 'Devis' or 'Bon de commande'} (Ref ${object.name or 'n/a' })"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_external_footer
+msgid "- APE :"
+msgstr "- APE :"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_external_footer
+msgid "- BIC :"
+msgstr "- BIC :"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_external_footer
+msgid "- SAS au capital de 50 000€ - TVA Intracommunautaire :"
+msgstr "- SAS au capital de 50 000€ - TVA Intracommunautaire :"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "<strong>BON POUR ACCORD</strong>"
+msgstr "<strong>BON POUR ACCORD</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_stock_picking
+#: model:ir.ui.view,arch_db:43west_profile.syleam_report_delivery_document
+msgid "<strong>Delivery date</strong>"
+msgstr "<strong>Date de livraison</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+msgid "<strong>Due Date</strong>"
+msgstr "<strong>Date d'échéance</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+msgid "<strong>Invoice Date</strong>"
+msgstr "<strong>Date de facture</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_purchaseorder_document
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>Date de commande</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_purchaseorder_document
+msgid "<strong>Our Order Reference:</strong>"
+msgstr "<strong>Notre Référence de Commande</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "<strong>Payment Term:</strong>"
+msgstr "<strong>Condition de paiement :</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+msgid "<strong>Payment Term</strong>"
+msgstr "<strong>Condition de paiement</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "<strong>Salesperson:</strong>"
+msgstr "<strong>Vendeur</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "<strong>Validity Date:</strong>"
+msgstr "<strong>Date de validité</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_purchaseorder_document
+msgid "<strong>Your Order Reference</strong>"
+msgstr "<strong>Votre Référence de commande</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "<strong>Your Reference:</strong>"
+msgstr "<strong>Référence client</strong>"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+msgid "Amount"
+msgstr "Montant"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+msgid "BIC/SWIFT :"
+msgstr "BIC/SWIFT :"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+msgid "Base"
+msgstr "Base"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "Code Article"
+msgstr "Code Article"
+
+#. module: 43west_profile
+#: model:ir.model,name:43west_profile.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_location_label_create_uid
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_product_label_create_uid
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_create_uid
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_location_label_create_date
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_product_label_create_date
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_create_date
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line_create_date
+msgid "Created on"
+msgstr "Créé sur"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "Date : ........ / ........ / ................"
+msgstr "Date : ........ / ........ / ................"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "Date Ordered:"
+msgstr "Date de commande"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_location_label_display_name
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_product_label_display_name
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_display_name
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line_display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_external_footer
+msgid "Email :"
+msgstr "Email :"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_external_footer
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+msgid "IBAN :"
+msgstr "IBAN :"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_location_label_id
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_product_label_id
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_id
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: 43west_profile
+#: model:ir.model.fields,help:43west_profile.field_product_product_countermark_ok
+#: model:ir.model.fields,help:43west_profile.field_product_template_countermark_ok
+msgid "If set, this product will be replace by new one before confirm sale order."
+msgstr "Si coché, ce produit sera remplacé par un nouveau produit avant la confirmation d'un devis"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_product_product_countermark_ok
+#: model:ir.model.fields,field_description:43west_profile.field_product_template_countermark_ok
+msgid "Is a Countermak"
+msgstr "Est une contremarque"
+
+#. module: 43west_profile
+#: model:ir.model.fields,help:43west_profile.field_product_product_use_as_countermark
+#: model:ir.model.fields,help:43west_profile.field_product_template_use_as_countermark
+msgid "Is set, this product is used in sale order"
+msgstr "Si coché, ce produit est utilisé dans une commande de vente"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_location_label_label_id
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_product_label_label_id
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_label_id
+msgid "Label"
+msgstr "Étiquette"
+
+#. module: 43west_profile
+#: model:ir.model.fields,help:43west_profile.field_wizard_print_location_label_label_id
+#: model:ir.model.fields,help:43west_profile.field_wizard_print_product_label_label_id
+#: model:ir.model.fields,help:43west_profile.field_wizard_print_receipt_labels_label_id
+msgid "Label to print."
+msgstr "Étiquette à imprimer"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line_count
+msgid "Labels Count"
+msgstr "Labels Count"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_location_label___last_update
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_product_label___last_update
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels___last_update
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line___last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_location_label_write_uid
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_product_label_write_uid
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line_write_uid
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_location_label_write_date
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_product_label_write_date
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line_write_date
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line_ids
+msgid "Lines"
+msgstr "Lignes"
+
+#. module: 43west_profile
+#: model:ir.model.fields,help:43west_profile.field_wizard_print_receipt_labels_line_ids
+msgid "Lines to print on labels."
+msgstr "Lignes à imprimer sur les étiquettes"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line_prodlot_id
+msgid "Lot"
+msgstr "Lot"
+
+#. module: 43west_profile
+#: model:ir.model.fields,help:43west_profile.field_wizard_print_receipt_labels_line_prodlot_id
+msgid "Lot to print on the label, if defined."
+msgstr "Lot à imprimer sur les étiquettes, si défini"
+
+#. module: 43west_profile
+#: model:ir.model.fields,help:43west_profile.field_wizard_print_receipt_labels_line_count
+msgid "Number of labels to print for this product/lot."
+msgstr "Nombre d'étiquettes à imprimer pour ce produit/lot"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_external_footer
+msgid "Page:"
+msgstr "Page:"
+
+#. module: 43west_profile
+#: model:ir.model,name:43west_profile.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.view_wizard_print_location_label_form
+#: model:ir.ui.view,arch_db:43west_profile.view_wizard_print_product_label_form
+msgid "Print Label"
+msgstr "Impression étiquette"
+
+#. module: 43west_profile
+#: model:ir.actions.act_window,name:43west_profile.action_wizard_print_location_label_view
+#: model:ir.model,name:43west_profile.model_wizard_print_location_label
+#: model:ir.ui.view,arch_db:43west_profile.view_wizard_print_location_label_form
+msgid "Print Location Label"
+msgstr "Imprimer l'étiquette emplacement"
+
+#. module: 43west_profile
+#: model:ir.actions.act_window,name:43west_profile.action_wizard_print_product_label_view
+#: model:ir.model,name:43west_profile.model_wizard_print_product_label
+msgid "Print Product Label"
+msgstr "Impriment l'étiquette produit"
+
+#. module: 43west_profile
+#: model:ir.model,name:43west_profile.model_wizard_print_receipt_labels
+msgid "Print Receipt Labels"
+msgstr "Imprimer les étiquettes réception"
+
+#. module: 43west_profile
+#: model:ir.model,name:43west_profile.model_wizard_print_receipt_labels_line
+msgid "Print Receipt Line"
+msgstr "Imprimer les lignes de réception"
+
+#. module: 43west_profile
+#: model:ir.actions.act_window,name:43west_profile.action_wizard_print_receipt_labels_view
+#: model:ir.ui.view,arch_db:43west_profile.view_wizard_print_receipt_labels_form
+msgid "Print Receipt labels"
+msgstr "Imprimer les étiquettes de réception"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line_wizard_id
+msgid "Print Wizard"
+msgstr "Assistant d'impression"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.view_wizard_print_receipt_labels_form
+msgid "Print labels"
+msgstr "Impression étiquettes"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.view_wizard_print_product_label_form
+msgid "Print product Label"
+msgstr "Impression étiquette produit"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_location_label_printer_id
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_product_label_printer_id
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_printer_id
+msgid "Printer"
+msgstr "Imprimante"
+
+#. module: 43west_profile
+#: model:ir.model.fields,help:43west_profile.field_wizard_print_location_label_printer_id
+#: model:ir.model.fields,help:43west_profile.field_wizard_print_product_label_printer_id
+#: model:ir.model.fields,help:43west_profile.field_wizard_print_receipt_labels_printer_id
+msgid "Printer used to print the labels."
+msgstr "Imprimante utilisé à imprimer les étiquettes"
+
+#. module: 43west_profile
+#: model:ir.model.fields,help:43west_profile.field_wizard_print_receipt_labels_line_wizard_id
+msgid "Printing wizard linked to this line."
+msgstr "Printing wizard linked to this line."
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_wizard_print_receipt_labels_line_product_id
+msgid "Product"
+msgstr "Produit"
+
+#. module: 43west_profile
+#: model:ir.model,name:43west_profile.model_product_template
+msgid "Product Template"
+msgstr "Modèle produit"
+
+#. module: 43west_profile
+#: model:ir.model.fields,help:43west_profile.field_wizard_print_receipt_labels_line_product_id
+msgid "Product to print on the label."
+msgstr "Produit à imprimer sur l'étiquette"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.view_wizard_print_receipt_labels_form
+msgid "Products"
+msgstr "Produits"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_purchaseorder_document
+msgid "Purchase Order Confirmation #"
+msgstr "Bon de Commande"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "Quotation Date:"
+msgstr "Date du devis"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "Rem."
+msgstr "Rem."
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_purchaseorder_document
+msgid "Request for Quotation #"
+msgstr "Demande pour Devis #"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_external_footer
+msgid "SIRET :"
+msgstr "SIRET :"
+
+#. module: 43west_profile
+#: model:ir.model,name:43west_profile.model_sale_order
+msgid "Sales Order"
+msgstr "Commandes de vente"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "Signature :"
+msgstr "Signature :"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_external_footer
+msgid "Site Web :"
+msgstr "Site Web :"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+msgid "Tax"
+msgstr "Taxe"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_invoice_document
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_saleorder_document
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: 43west_profile
+#: model:ir.ui.view,arch_db:43west_profile.43west_profile_external_footer
+msgid "Tel :"
+msgstr "Tel :"
+
+#. module: 43west_profile
+#: model:ir.model.fields,field_description:43west_profile.field_product_product_use_as_countermark
+#: model:ir.model.fields,field_description:43west_profile.field_product_template_use_as_countermark
+msgid "Use as Countermark"
+msgstr "Utilisé comme une contremarque"
+

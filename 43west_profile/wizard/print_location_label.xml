@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        ##############################################################################
+        #
+        #    43west_profile module for OpenERP, Profile for
+        #    Copyright (C) 2016 SYLEAM Info Services ([http://www.Syleam.fr/])
+        #              Sylvain Garancher [sylvain.garancher@syleam.fr]
+        #
+        #    This file is a part of 43west_profile
+        #
+        #    43west_profile is free software: you can redistribute it and/or modify
+        #    it under the terms of the GNU Affero General Public License as published by
+        #    the Free Software Foundation, either version 3 of the License, or
+        #    (at your option) any later version.
+        #
+        #    43west_profile is distributed in the hope that it will be useful,
+        #    but WITHOUT ANY WARRANTY; without even the implied warranty of
+        #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        #    GNU Affero General Public License for more details.
+        #
+        #    You should have received a copy of the GNU Affero General Public License
+        #    along with this program.  If not, see [http://www.gnu.org/licenses/].
+        #
+        ##############################################################################
+
+        <record id="view_wizard_print_location_label_form" model="ir.ui.view">
+            <field name="name">wizard.print.location.label.form</field>
+            <field name="model">wizard.print.location.label</field>
+            <field name="arch" type="xml">
+                <form string="Print Location Label">
+                    <group>
+                        <field name="printer_id"/>
+                        <field name="label_id"/>
+                    </group>
+                    <button string="Print Label" type="object" name="print_label"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_wizard_print_location_label_view">
+            <field name="name">Print Location Label</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.print.location.label</field>
+            <field name="view_mode">form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="stock.model_stock_location" />
+        </record>
+    </data>
+</openerp>

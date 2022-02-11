@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2018 Syleam
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+
+    <!-- report_layout.css file is for common style between all reports -->
+    <!-- 43west_profile_minimal_laout_?? = import css for PDF format -->
+    <template id="43west_profile_minimal_layout_header" inherit_id="web.minimal_layout">
+        <xpath expr="//head" position="inside">
+            <link href="/43west_profile/static/src/css/report_layout.css" rel="stylesheet"/>
+            <link href="/43west_profile/static/src/css/report_header.css" rel="stylesheet"/>
+        </xpath>
+    </template>
+
+    <!-- 43west_profile_layout_?? = import css for HTML format -->
+    <template id="43west_profile_layout_header" inherit_id="web.report_layout">
+        <xpath expr="//head" position="inside">
+            <link href="/43west_profile/static/src/css/report_layout.css" rel="stylesheet"/>
+            <link href="/43west_profile/static/src/css/report_header.css" rel="stylesheet"/>
+        </xpath>
+    </template>
+
+<!--    <template id="43west_profile_external_header" inherit_id="web.external_layout_standard">-->
+<!--        <xpath expr="//div[hasclass('header')]" position="replace">-->
+<!--            <div class="header">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xs-6">-->
+<!--                        <div name="company_address"></div>-->
+<!--                        <div class="divCompanyPartner">-->
+<!--                            <img src="/43west_profile/static/src/images/logo.png" />-->
+<!--                            <div class="divInfoCompanyPartner">-->
+<!--                                <div class="divAddressCompanyPartner">-->
+<!--                                    <i class="fa fa-map-marker fa-lg iAddressCompanyPartner"></i>-->
+<!--                                    <div class="divAddressCompanyPartnerIndent">-->
+<!--                                        <div><span t-field="company.street" /></div>-->
+<!--                                        <div t-if="company.street2"><span t-field="company.street2" /></div>-->
+<!--                                        <div><span t-field="company.zip" /> <span t-field="company.city" /> - <span t-field="company.country_id" /></div>-->
+<!--                                    </div>-->
+<!--                                    <div><i class="fa fa-phone fa-lg"></i><span t-field="company.phone" class="spanPhoneCompanyPartner" />&lt;!&ndash; - <i class="fa fa-fax fa-lg"></i><span t-field="company.fax" class="spanFaxCompanyPartner" />&ndash;&gt;</div>-->
+<!--                                    <div><i class="fa fa-at fa-lg"></i><span t-field="company.email" class="spanEmailCompanyPartner" /></div>-->
+<!--                                    <div><i class="fa fa-globe fa-lg"></i><span t-field="company.website" class="spanWebsiteCompanyPartner" /></div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-xs-6">-->
+<!--                        <div class="divCompanyLogo">-->
+<!--                            &lt;!&ndash;<img src="/idaf_profile/static/src/images/syleam.png" />&ndash;&gt;-->
+<!--                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" />-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+    <!-- Delete barcode from bl -->
+<!--    <template id="43west_profile_external_header_barcode" inherit_id="stock.external_layout_header_barcode_right">-->
+<!--        <xpath expr="//div[@name='right_box']" position="replace" />-->
+<!--    </template>-->
+</odoo>

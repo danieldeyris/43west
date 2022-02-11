@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2018 Syleam
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record id="paperformat_euro" model="report.paperformat">
+        <field name="name">Paper Format Euro</field>
+        <field name="margin_top">50</field>
+        <field name="header_spacing">50</field>
+    </record>
+</odoo>

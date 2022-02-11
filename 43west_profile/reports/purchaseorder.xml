@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        ##############################################################################
+        #
+        #    43west_profile module for OpenERP, Generic Syleam reports
+        #    Copyright (C) 2016 SYLEAM Info Services ([http://www.Syleam.fr/])
+        #              Yannis Pou-Vich [yannis.pouvich@syleam.fr]
+        #
+        #    This file is a part of 43west_profile
+        #
+        #    43west_profile is free software: you can redistribute it and/or modify
+        #    it under the terms of the GNU Affero General Public License as published by
+        #    the Free Software Foundation, either version 3 of the License, or
+        #    (at your option) any later version.
+        #
+        #    43west_profile is distributed in the hope that it will be useful,
+        #    but WITHOUT ANY WARRANTY; without even the implied warranty of
+        #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        #    GNU Affero General Public License for more details.
+        #
+        #    You should have received a copy of the GNU Affero General Public License
+        #    along with this program.  If not, see [http://www.gnu.org/licenses/].
+        #
+        ##############################################################################
+
+        <!-- report_layout.css file is for common style between all reports -->
+        <!-- 43west_profile_minimal_laout_?? = import css for PDF format -->
+        <template id="43west_minimal_layout_purchaseorder" inherit_id="web.minimal_layout">
+            <xpath expr="//head" position="inside">
+                <link href="/43west_profile/static/src/css/report_purchaseorder.css" rel="stylesheet"/>
+            </xpath>
+        </template>
+
+        <!-- 43west_profile_layout_?? = import css for HTML format -->
+        <template id="43west_layout_purchaseorder" inherit_id="web.report_layout">
+            <xpath expr="//head" position="inside">
+                <link href="/43west_profile/static/src/css/report_purchaseorder.css" rel="stylesheet"/>
+            </xpath>
+        </template>
+
+<!--        <template id="43west_purchaseorder_document" inherit_id="purchase.report_purchaseorder_document">-->
+<!--            &lt;!&ndash; First Row &ndash;&gt;-->
+<!--            <xpath expr="//div[@class='row'][1]/div[@class='col-xs-6']" position="attributes">-->
+<!--                <attribute name="class">col-xs-6 divShippingAddress</attribute>-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Title &ndash;&gt;-->
+<!--            <xpath expr="//h2[1]" position="replace">-->
+<!--                <h2 class="col-xs-12 text-center" t-if="o.state != 'draft'">Purchase Order Confirmation # <span t-field="o.name"/></h2>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//h2[2]" position="replace">-->
+<!--                <h2 class="col-xs-12 text-center" t-if="o.state == 'draft'">Request for Quotation # <span t-field="o.name"/></h2>-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Information &ndash;&gt;-->
+<!--            <xpath expr="//div[@class='row mt32 mb32']" position="replace">-->
+<!--                <div class="row mt32 mb32 divInformations">-->
+<!--                    <div class="col-xs-6">-->
+<!--                        <div t-if="o.partner_ref">-->
+<!--                            <strong>Your Order Reference</strong>-->
+<!--                            <p t-field="o.partner_ref"/>-->
+<!--                        </div>-->
+<!--                        <div t-if="o.date_order">-->
+<!--                            <strong>Order Date:</strong>-->
+<!--                            <p t-field="o.date_order" t-field-options='{"format": "dd/MM/YYYY"}' />-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div t-if="o.name" class="col-xs-6">-->
+<!--                        <strong>Our Order Reference:</strong>-->
+<!--                        <p t-field="o.name"/>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Table Head &ndash;&gt;-->
+<!--            <xpath expr="//strong[text()='Description']/../../../.." position="attributes">-->
+<!--                <attribute name="class">table table-condensed tblProduct</attribute>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//table[@class='table table-condensed tblProduct']//th[2]" position="replace" />-->
+<!--            <xpath expr="//table[@class='table table-condensed tblProduct']//td[2]" position="replace" />-->
+
+<!--            &lt;!&ndash; Taxes and Total &ndash;&gt;-->
+<!--            <xpath expr="//div[@class='row'][2]/div[@class='col-xs-4 pull-right']" position="attributes">-->
+<!--                <attribute name="class">col-xs-5 pull-right divTotal</attribute>-->
+<!--            </xpath>-->
+<!--        </template>-->
+    </data>
+</openerp>

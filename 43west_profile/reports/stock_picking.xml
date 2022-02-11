@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        ##############################################################################
+        #
+        #    idaf_profile module for OpenERP, IDAF profile
+        #    Copyright (C) 2016 SYLEAM Info Services ([http://www.Syleam.fr/])
+        #              Yannis Pou-Vich [yannis.pouvich@syleam.fr]
+        #
+        #    This file is a part of idaf_profile
+        #
+        #    idaf_profile is free software: you can redistribute it and/or modify
+        #    it under the terms of the GNU Affero General Public License as published by
+        #    the Free Software Foundation, either version 3 of the License, or
+        #    (at your option) any later version.
+        #
+        #    idaf_profile is distributed in the hope that it will be useful,
+        #    but WITHOUT ANY WARRANTY; without even the implied warranty of
+        #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        #    GNU Affero General Public License for more details.
+        #
+        #    You should have received a copy of the GNU Affero General Public License
+        #    along with this program.  If not, see [http://www.gnu.org/licenses/].
+        #
+        ##############################################################################
+
+        <!-- 43west_profile_minimal_laout_?? = import css for PDF format -->
+        <template id="43west_profile_minimal_layout_stock_picking" inherit_id="web.minimal_layout">
+            <xpath expr="//head" position="inside">
+                <link href="/43west_profile/static/src/css/report_stock_picking.css" rel="stylesheet"/>
+            </xpath>
+        </template>
+
+        <!-- 43west_profile_layout_?? = import css for HTML format -->
+        <template id="43west_profile_layout_stock_picking" inherit_id="web.report_layout">
+            <xpath expr="//head" position="inside">
+                <link href="/43west_profile/static/src/css/report_stock_picking.css" rel="stylesheet"/>
+            </xpath>
+        </template>
+
+<!--        <template id="43west_profile_stock_picking" inherit_id="stock.report_picking" priority="32">-->
+<!--            &lt;!&ndash; Customer &ndash;&gt;-->
+<!--            <xpath expr="//div[@class='row'][1]/div[1]" position="attributes">-->
+<!--                <attribute name="class">col-xs-6 divCustomer</attribute>-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Barcode &ndash;&gt;-->
+<!--            <xpath expr="//div[@class='row'][1]/div[2]" position="inside">-->
+<!--                <div class="pull-right" name="right_box">-->
+<!--                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', o.name, 600, 100)" style="width:300px;height:50px;"/>-->
+<!--                </div>-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Title &ndash;&gt;-->
+<!--            <xpath expr="//h1" position="replace">-->
+<!--                <h1 class="mt0"><span t-field="o.picking_type_id" /> : <span t-field="o.name" /></h1>-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Informations &ndash;&gt;-->
+<!--            <xpath expr="//th[@name='td_sched_date_h']" position="replace">-->
+<!--                <th name="td_sched_date_h"><strong>Delivery date</strong></th>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//span[@t-field='o.date']" position="replace">-->
+<!--                <span t-esc="time.strftime('%d',time.strptime(o.date,'%Y-%m-%d %H:%M:%S'))" />/-->
+<!--                <span t-esc="time.strftime('%m',time.strptime(o.date,'%Y-%m-%d %H:%M:%S'))" />/-->
+<!--                <span t-esc="time.strftime('%Y',time.strptime(o.date,'%Y-%m-%d %H:%M:%S'))" />-->
+<!--            </xpath>-->
+<!--            <xpath expr="//span[@t-field='o.min_date']" position="replace">-->
+<!--                <span t-field="o.date_done" t-field-options='{"format": "dd/MM/YYYY"}' />-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Table head 1 &ndash;&gt;-->
+<!--            <xpath expr="//table[@class='table table-condensed']" position="attributes">-->
+<!--                <attribute name="class">table table-condensed tblStockPicking</attribute>-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Table head 2 &ndash;&gt;-->
+<!--            <xpath expr="//table[@class='table table-condensed']" position="attributes">-->
+<!--                <attribute name="class">table table-condensed tblStockPicking</attribute>-->
+<!--            </xpath>-->
+<!--        </template>-->
+    </data>
+</openerp>

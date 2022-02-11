@@ -1,0 +1,23 @@
+/* ===== Customer ===== */
+.divCustomerDeliverySlip{
+    margin-top: 20px;
+}
+
+/* ===== Title ===== */
+h2{
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+/* ===== Table head ===== */
+.tblDeliverySlip {
+    margin-top: 50px;
+}
+.tblDeliverySlip > thead > tr > th{
+    border-bottom: none !important;
+}
+.tblDeliverySlip th{
+    background: rgba(150,150,150,1);
+    border: 2px solid rgba(150,150,150,1) !important;
+    color: white;
+}
